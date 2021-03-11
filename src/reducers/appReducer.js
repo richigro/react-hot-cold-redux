@@ -1,9 +1,11 @@
 import * as actions from '../actions/actions';
 
+const highestNumber = 100;
+
 const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
-    correctAnswer: Math.floor(Math.random() * 100 + 1)
+    correctAnswer: Math.floor(Math.random() * highestNumber + 1)
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -11,7 +13,7 @@ export const appReducer = (state = initialState, action) => {
         return Object.assign({}, state, {
             guesses: [],
             feedback: 'Make your guess!',
-            correctAnswer: Math.floor(Math.random() * 100 + 1)
+            correctAnswer: Math.floor(Math.random() * highestNumber + 1)
         });
     } else if (action.type === actions.ADD_GUESS) {
         console.log(state.correctAnswer);
